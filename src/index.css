@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 240 10% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 221 83% 53%;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 4%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 4%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 221 83% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .fitness-card {
+    @apply bg-card rounded-xl shadow-md p-5 border border-border;
+  }
+  
+  .fitness-button {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center;
+  }
+
+  .fitness-input {
+    @apply w-full px-4 py-3 rounded-lg border border-input focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all;
+  }
+
+  .glass-morphism {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)];
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-br from-white via-white/90 to-white/70 bg-clip-text text-transparent;
+  }
+  
+  .pacto-card {
+    @apply bg-white rounded-2xl shadow-md overflow-hidden;
+  }
+  
+  .pacto-button {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-200;
+  }
+  
+  .action-icon {
+    @apply h-12 w-12 rounded-lg bg-gray-100 flex items-center justify-center mb-1;
+  }
+  
+  .glass-morphism-wine {
+    @apply backdrop-blur-xl bg-black/30 border border-white/10 shadow-lg rounded-xl;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+  
+  .text-gradient-wine {
+    @apply bg-gradient-to-r from-white via-wine-muted to-white/80 bg-clip-text text-transparent;
+  }
+  
+  .wine-input {
+    @apply w-full px-4 py-3 rounded-lg border border-white/10 bg-black/20 focus:border-wine-accent/70 focus:ring-1 focus:ring-wine-accent/30 focus:outline-none transition-all text-white placeholder:text-white/50;
+  }
+  
+  .wine-button {
+    @apply bg-gradient-to-r from-wine-medium to-wine-light hover:from-wine-light hover:to-wine-accent text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg;
+    background-size: 200% auto;
+    animation: gradient-shift 3s ease infinite;
+  }
+  
+  .wine-theme .card {
+    @apply border-wine-accent/10 bg-transparent;
+  }
+  
+  .wine-theme .input {
+    @apply wine-input;
+  }
+  
+  /* Novos estilos para o tema roxo */
+  .purple-input {
+    @apply w-full px-4 py-5 rounded-xl border border-white/30 bg-transparent focus:border-white/50 focus:ring-1 focus:ring-white/20 focus:outline-none transition-all text-white placeholder:text-white/70;
+  }
+  
+  .purple-theme .card {
+    @apply border-0 bg-transparent;
+  }
+  
+  .purple-theme .input {
+    @apply purple-input;
+  }
+
+  /* Glass input effect */
+  .glass-input {
+    @apply backdrop-blur-md bg-white/10 border border-white/30 shadow-sm;
+  }
+}
+
+/* Animation delay utilities */
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
